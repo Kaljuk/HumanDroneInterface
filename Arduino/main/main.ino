@@ -1,4 +1,3 @@
-#include "VirtualWire.h"
 #define PINL 13
 
 void setup() {
