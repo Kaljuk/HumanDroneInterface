@@ -29,6 +29,11 @@ def send(spi, values):
     resp = spi.xfer([0x87] + data_to_send)
     print(resp)
 
+def read(spi):
+    data_received = spi.read()
+    print(data_received)
+
+
 
 def close(spi):
     spi.close()
