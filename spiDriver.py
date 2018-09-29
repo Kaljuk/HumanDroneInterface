@@ -32,13 +32,11 @@ def send(spi, values):
 def read(spi):
     while True:
         try:
-            spi.readbytes(2) # n = 3,2 ?
+            received = spi.readbytes(2) # n = 3,2 ?
+            print(received)
         except KeyboardInterrupt:
             spi.close()
             break
-    data_received = spi.read()
-    print(data_received)
-
 
 
 
