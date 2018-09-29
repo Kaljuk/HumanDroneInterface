@@ -28,7 +28,7 @@ def get_inputs_as_pwm():
     pwm_inputs.append(value_to_pwm(btn1))
     pwm_inputs.append(value_to_pwm(btn2))
 
-    return [pwm_inputs]
+    return pwm_inputs
 
 
 def main():
