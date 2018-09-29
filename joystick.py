@@ -11,6 +11,8 @@ def get_inputs_as_pwm():
     joystick = pygame.joystick.Joystick(0)
     joystick.init()
 
+
+    #new stuff
     roll = round(joystick.get_axis(0), 3)
     pitch = round(joystick.get_axis(1), 3)
     height = round(joystick.get_axis(2), 3)
