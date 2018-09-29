@@ -1,4 +1,5 @@
 import pygame
+import spiDriver
 
 
 def value_to_pwm(value):
@@ -35,13 +36,18 @@ def main():
     pygame.init()
     pygame.joystick.init()
 
-    while _running:
-        pygame.event.get()  # Ping for events
-        print(get_inputs_as_pwm())
+    spi = spiDriver.init()
+
+    try:
+        while _running:
+            pygame.event.get()  # Ping for events
+            inputs = get_inputs_as_pwm()
+            spiDriver.send(spi, inputs)
+            print(inputs)
+    except KeyboardInterrupt:
+        spiDriver.close(spi)
 
 
 if __name__ == '__main__':
     _running = True
     main()
-
-
