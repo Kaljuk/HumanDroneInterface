@@ -13,9 +13,9 @@ def main():
 
     spi = spiDriver.init()
 
-    try:
-        while _running:            
-            spiDriver.read(spi)
+    while _running:            
+        spiDriver.read(spi)
+        
 
 if __name__ == '__main__':
     _running = True
